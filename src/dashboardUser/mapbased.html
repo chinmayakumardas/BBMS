@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donar Portal - Blood Donars</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="userStyle.css" />
+  </head>
+  <body>
+    <nav class=" nav">
+      <ul class="nav__link">
+        <li><a href="userHome.html">HOME</a></li>
+        <li class="active"><a href="userDonate.html">DONATE NOW</a></li>
+        <li><a href="userAppointment.html"> MY APPOINTMENTS</a></li>
+        <li><a href="userDonations.html"> MY DONATIONS</a></li>
+        <li><a href="userRateOurStaff.html"> RATE OUR STAFF</a></li>
+        <li><a href="userStore.html"> STORE</a></li>
+        <li><a href="userMyAccount.html"> MY ACCOUNT</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="main__nav">
+        <div class="main__nav--header">
+          <h3>Donor Snapshot</h3>
+          <img src="image/profile.svg" alt="Donor Snapshot avatar" />
+        </div>
+        <div class="main__nav--desc">
+          <h4>Search Schedules:</h4>
+          <a href="searchcenter.html">Donor Centers</a>
+          <a href="#">Map Based</a>
+          <a href="#">Zip Code Search</a>
+          <a href="#">County Search</a>
+          <a href="#">City Search</a>
+          <a href="#">Sponsor Name Search</a>
+          <a href="#">Sponsor Code Search</a>
+          <h4>Appointments:</h4>
+          <a href="userAppointment.html">My Appointments</a>
+        </div>
+      </div>
+      <div class="main__info">
+        <h2>Donate Now</h2>
+        <div>
+        	<div>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d886760.0783788199!2d31.15797548828123!3d29.751417437704156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1584747070365!5m2!1sar!2seg" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> 
+          </div>
+          <form action="">
+          <!-- Start Date -->
+          <label for="startDate">Start Date:</label>
+          <input type="date" name="startdate" id="startDate" /> <br />
+          <!-- End Date -->
+          <label for="endDate">End Date:</label>
+          <input type="date" name="endtdate" id="endDate" /> <br />
+          <!-- Distance range -->
+          <br />
+         <div class="form-group">
+            <label class="control-label" for="show_mobiles">Mobile Drives:</label>
+            <input type="checkbox" name="show_mobiles" value="1" checked="checked" >
+            <!-- <div is="0" class="btn-group" tabindex="0">
+            <a is="0" class="btn btn-default">No</a>
+            <a is="1" class="btn active btn-success">Yes</a>
+            </div> -->
+          </div>
+          <!-- Donation Type -->
+          <label for="donationType:">Donation Type</label>
+          <select name="donationType" id="donationType">
+            <option value="0" selected>Any</option>
+            <option value="1">Automated Red Cell</option>
+            <option value="2">Plasma</option>
+            <option value="3">Platelet</option>
+            <option value="4">Whole Blood</option>
+          </select>
+          <br>
+          <button type="submit">Update Map</button>
+        </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

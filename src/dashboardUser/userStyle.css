@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+:root {
+  --main-color: #a4243b;
+  --second-color: #bac1d2;
+  --text-color: #414141;
+  --a-color: #00a8c4;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Rubik", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--a-color);
+}
+
+ul {
+  list-style: none;
+}
+
+.nav {
+  height: 9vh;
+  margin: 0;
+}
+
+.nav__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+
+.nav__link li {
+  padding: 1em;
+}
+
+.nav__link li.active {
+  font-weight: bold;
+}
+
+.nav__link li.active a {
+  color: var(--main-color);
+}
+
+.nav__link li a {
+  padding-bottom: 0.4em;
+  color: var(--text-color);
+}
+
+.nav__link li a:hover {
+  color: var(--main-color);
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+  -ms-grid-columns: 30% 70%;
+  grid-template-columns: 30% 70%;
+  gap: 2em;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+}
+
+main .main__nav {
+  background-color: #eaeff7;
+}
+
+main .main__nav--header {
+  text-align: center;
+}
+
+main .main__nav--header h3 {
+  color: var(--text-color);
+}
+
+main .main__nav--header img {
+  max-width: 30%;
+  margin: auto;
+}
+
+main .main__nav--desc {
+  width: 90%;
+  padding-top: 0.5em;
+  margin: auto;
+  color: var(--main-color);
+}
+
+main .main__nav--desc h4 {
+  margin-bottom: 0.4em;
+}
+
+main .main__nav--desc p {
+  color: var(--text-color);
+  text-align: left;
+}
+
+main .main__nav--desc a {
+  display: block;
+  margin-bottom: 0.3em;
+}
+
+main .main__info {
+  width: 90%;
+  margin: 0.3em auto;
+}
+
+main .main__info p {
+  line-height: 1.9;
+}
+
+main .main__info p:first-of-type {
+  line-height: 1.6;
+}
+
+main .main__info form {
+  width: 80%;
+  margin: 2em auto;
+  text-align: start;
+  padding: 1em;
+  border: 2px solid var(--text-color);
+}
+
+main .main__info form label {
+  margin-right: 3em;
+  font-weight: bold;
+}
+
+main .main__info form input {
+  margin-bottom: 1.4em;
+  text-align: end;
+}
+
+main .main__info form input[type="text"],
+main .main__info form input[type="date"] {
+  padding: 0.5em;
+  color: black;
+  background: #fefefe;
+  width: 9vw;
+  height: 5vh;
+  font-size: 1.1em;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+main .main__info form input[type="radio"] {
+  cursor: pointer;
+}
+main .main__info form .form-group {
+  display: flex;
+  margin-bottom: 1em;
+}
+main .main__info form .form-group label {
+  padding: 6px;
+}
+main .main__info form .form-group label.value {
+  font-weight: normal;
+}
+main .main__info form .form-group input[type="checkbox"] {
+  position: relative;
+  width: 43px;
+  height: 23px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  background: red;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+main .main__info form .form-group input[type="checkbox"]:before {
+  content: " ";
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+main .main__info form .form-group input:checked[type="checkbox"] {
+  background-color: green;
+}
+main .main__info form .form-group input:checked[type="checkbox"]:before {
+  left: 23px;
+}
+main .main__info form select {
+  color: black;
+  margin-bottom: 1.2em;
+  background: #fefefe;
+  width: 9vw;
+  height: 5vh;
+  font-size: 1.1em;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+main .main__info form select option {
+  color: black;
+  font-size: 1.1em;
+}
+
+main .main__info form input[type="range"] {
+  -webkit-appearance: none;
+  width: calc(60% - (73px));
+  height: 10px;
+  border-radius: 5px;
+  background: #d7dcdf;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+main .main__info form input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--text-color);
+  cursor: pointer;
+}
+
+main .main__info form input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: var(--main-color);
+}
+
+main .main__info form button {
+  display: inline-block;
+  width: 20%;
+  margin: 2em auto 0;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+  background: var(--main-color);
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+main .main__info form button.btn-back {
+  background: #fff;
+  color: black;
+  border-color: black;
+}
+
+main .main__info form button:active {
+  position: relative;
+  top: 1px;
+}
+
+main .main__info--links {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+  margin-top: 2em;
+  -ms-grid-columns: (minmax(200px, 1fr)) [auto-fill];
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5em;
+}
+
+main .main__info--links div {
+  border: 2px solid black;
+  padding: 1.5em 1em;
+}
+
+main .main__info--links div i {
+  color: var(--main-color);
+}
+
+main .main__info--links div h3 {
+  color: black;
+}
+
+.main__content {
+  width: 80%;
+  height: 100%;
+  border: solid 1px #e1e1e8;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1em;
+  margin-left: 10px;
+}
+.main__content-info {
+  width: 44%;
+  height: 120px;
+}
+.main__a {
+  color: #00a8c4;
+  text-decoration: underline;
+}
+iframe {
+  display: block; /* frames are inline by default */
+  background: #000;
+  border: none; /* Reset default border */ /* Viewport-relative units */
+  width: 80%;
+}

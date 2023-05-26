@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard</title>
+    <meta
+      name="description"
+      content="BloodDrop is an platform to help people to find blood donar"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <script src="main.js" defer></script>
+
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!-- start header -->
+    <section class="main">
+      <div class="header">
+        <div class="logo">
+          <i class="fa fa-tachometer"></i>
+          <span>BloodBank</span>
+        </div>
+        <a href="#" class="nav-trigger"><span></span></a>
+      </div>
+      <div class="side-nav">
+        <div class="logo">
+          <i class="fa fa-tachometer"></i>
+          <span>BloodBank</span>
+        </div>
+        <nav>
+          <ul>
+            <li class="tablinks active" onclick="openTab(event, 'dash')">
+              <a href="#">
+                <span><i class="fas fa-chart-pie"></i></span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="tablinks" onclick="openTab(event, 'availabel')">
+              <a href="#">
+                <span><i class="far fa-bookmark"></i></span>
+                <span>Availabel Blood</span>
+              </a>
+            </li>
+            <li class="tablinks" onclick="openTab(event, 'needBlood')">
+              <a href="#">
+                <span><i class="fas fa-ambulance"></i></span>
+                <span>Need Blood</span>
+              </a>
+            </li>
+            <li class="tablinks" onclick="openTab(event, 'bags')">
+              <a href="#">
+                <span><i class="fas fa-plus-circle"></i></span>
+                <span>Add Blood Bags</span>
+              </a>
+            </li>
+            <li class="tablinks" onclick="openTab(event, 'bloodDonar')">
+              <a href="#">
+                <span><i class="fas fa-user-plus"></i></span>
+                <span>Donars</span>
+              </a>
+            </li>
+            <li class="tablinks" onclick="openTab(event, 'patient')">
+              <a href="#">
+                <span><i class="fas fa-user-injured"></i></span>
+                <span>Patient</span>
+              </a>
+            </li>
+            <li class="tablinks" onclick="openTab(event, 'charity')">
+              <a href="#">
+                <span><i class="fas fa-handshake"></i></span>
+                <span>Charity</span>
+              </a>
+            </li>
+            <li class="tablinks" onclick="openTab(event,'account')">
+              <a href="#">
+                <span><i class="fas fa-user-circle"></i></span>
+                <span>Account</span>
+              </a>
+            </li>
+            <li class="tablinks">
+              <a href="#">
+                <span><i class="fas fa-sign-out-alt"></i></span>
+                <span>Log Out</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- end header -->
+      <!-- start dash -->
+
+      <div class="main-content" id="dash">
+        <div class="title">
+          <h3 class="title__h3">dashboard</h3>
+          <p class="title__p">welcome name</p>
+        </div>
+        <div class="main tabcontent">
+          <div class="widget">
+            <div class="title">Number of views</div>
+            <div class="chart"></div>
+          </div>
+          <div class="widget">
+            <div class="title">Number of likes</div>
+            <div class="chart"></div>
+          </div>
+          <div class="widget">
+            <div class="title">Number of comments</div>
+            <div class="chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- end dash -->
+      <!-- start available -->
+
+      <div class="main-content tabcontent" id="availabel">
+        <!-- start new item -->
+        <div class="new-items ">
+          <div class="new-items_conatiner">
+            <h2>new availabel blood</h2>
+            <p class="red">available blood</p>
+            <form class="new-items_form">
+              <label class="new-items_label" for="type">blood type</label>
+              <select class="new-items_select type">
+                <option value="a+">a+</option>
+                <option value="a-">a-</option>
+                <option value="o+">o+</option>
+                <option value="o-">o-</option>
+                <option value="b+">b+</option>
+                <option value="b-">b-</option>
+
+                <option value="ab+">ab+</option>
+                <option value="ab-">ab-</option>
+              </select>
+              <label class="new-items_label" for="quantity"
+                >blood quantity</label
+              >
+              <input class="new-items_input" type="number" name="quantity" />
+            </form>
+            <button class="add-new add-new_float addnew">create</button>
+          </div>
+        </div>
+        <!-- end new item -->
+        <div class="pd-1">
+          <div class="container">
+            <button class="add-new addMain">new</button>
+            <table class="availabel">
+              <thead>
+                <tr>
+                  <th scope="col">blod</th>
+                  <th scope="col">quantity</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="name">a-</td>
+                  <td data-label="quantity">20</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row" data-label="name">a+</td>
+                  <td data-label="quantity">0</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row" data-label="name">o-</td>
+                  <td data-label="quantity">6</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row" data-label="name">o+</td>
+                  <td data-label="Due Date">0</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row" data-label="name">ab-</td>
+                  <td data-label="Due Date">7</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row" data-label="name">ab+</td>
+                  <td data-label="Due Date">8</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row" data-label="name">b-</td>
+                  <td data-label="Due Date">10</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row" data-label="name">b+</td>
+                  <td data-label="Due Date">4</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- end available -->
+      <!-- start need blood -->
+      <div class="main-content tabcontent" id="needBlood">
+        <div class="new-items ">
+          <div class="new-items_conatiner">
+            <h2>need bloods</h2>
+            <p class="red">needs quantity</p>
+            <form class="new-items_form">
+              <label class="new-items_label" for="type">blood type</label>
+              <select class="new-items_select type">
+                <option value="a+">a+</option>
+                <option value="a-">a-</option>
+                <option value="o+">o+</option>
+                <option value="o-">o-</option>
+                <option value="b+">b+</option>
+                <option value="b-">b-</option>
+                <option value="ab+">ab+</option>
+                <option value="ab-">ab-</option>
+              </select>
+              <label class="new-items_label" for="department">Department</label>
+              <input class="new-items_input" type="text" name="department" />
+              <label class="new-items_label" for="patient">Patient</label>
+              <input class="new-items_input" type="text" name="patient" />
+              <label class="new-items_label" for="quantity"
+                >blood quantity</label
+              >
+              <input class="new-items_input" type="number" name="quantity" />
+            </form>
+            <button class="add-new add-new_float addnew">create</button>
+          </div>
+        </div>
+        <div class="pd-1">
+          <div class="container">
+            <button class="add-new addMain">new need</button>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">blood type</th>
+                  <th scope="col">department</th>
+                  <th scope="col">patient</th>
+                  <th scope="col">quantity</th>
+                  <th scope="col">date</th>
+                  <th scope="col" class="center">done</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="blood type" class="blood-type">o-</td>
+                  <td data-label="department">burn center</td>
+                  <td data-label="patient">fathy</td>
+                  <td data-label="quantity">2</td>
+                  <td data-label="date">15/03/20 9:44:20 AM</td>
+                  <td data-label="done"><p class="not-done"></p></td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="blood type" class="blood-type">a-</td>
+                  <td data-label="department">dentistry</td>
+                  <td data-label="patient">magdy ahmed</td>
+                  <td data-label="quantity">5</td>
+                  <td data-label="date">17/03/20 10:44:20 PM</td>
+                  <td data-label="done"><p class="done"></p></td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="blood type" class="blood-type">ab+</td>
+                  <td data-label="department">internal diseases</td>
+                  <td data-label="patient">ahmed mahmoud</td>
+                  <td data-label="quantity">1</td>
+                  <td data-label="date">25/03/20 1:00:40 PM</td>
+                  <td data-label="done"><p class="done"></p></td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- end need blood -->
+      <!-- start bags -->
+      <div class="main-content tabcontent" id="bags">
+        <div class="new-items ">
+          <div class="new-items_conatiner">
+            <h2>new blood bags</h2>
+            <p class="red">bags info</p>
+            <form class="new-items_form">
+              <label class="new-items_label" for="type">blood type</label>
+              <select class="new-items_select type">
+                <option value="a+">a+</option>
+                <option value="a-">a-</option>
+                <option value="o+">o+</option>
+                <option value="o-">o-</option>
+                <option value="b+">b+</option>
+                <option value="b-">b-</option>
+
+                <option value="ab+">ab+</option>
+                <option value="ab-">ab-</option>
+              </select>
+              <label class="new-items_label" for="charity">Charity Name</label>
+              <input class="new-items_input" type="text" name="charity" />
+              <label class="new-items_label" for="donarName">Donar Name</label>
+              <input class="new-items_input" type="text" name="donarName" />
+              <label class="new-items_label" for="quantity"
+                >blood quantity</label
+              >
+              <input class="new-items_input" type="number" name="quantity" />
+            </form>
+            <button class="add-new add-new_float addnew">create</button>
+          </div>
+        </div>
+        <div class="pd-1">
+          <div class="container">
+            <button class="add-new addMain">new bags</button>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">blood type</th>
+                  <th scope="col">charity name</th>
+                  <th scope="col">donar name</th>
+                  <th scope="col">quantity</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="blood type" class="blood-type">o-</td>
+                  <td data-label="charity name">resala</td>
+                  <td data-label="donar name">fathy</td>
+                  <td data-label="quantity">2</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="blood type" class="blood-type">ab+</td>
+                  <td data-label="charity name">resala</td>
+                  <td data-label="donar name"></td>
+                  <td data-label="quantity">20</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="blood type" class="blood-type">o+</td>
+                  <td data-label="charity name"></td>
+                  <td data-label="donar name">mustafa</td>
+                  <td data-label="quantity">2</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="blood type" class="blood-type">a-</td>
+                  <td data-label="charity name">mansoura</td>
+                  <td data-label="donar name">mohamed</td>
+                  <td data-label="quantity">4</td>
+                  <td data-label="edit">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- end bags -->
+      <!-- start blood donar -->
+      <div class="main-content tabcontent" id="bloodDonar">
+        <div class="new-items">
+          <div class="new-items_conatiner">
+            <h2>new donar</h2>
+            <p class="red">donar info</p>
+            <form class="new-items_form">
+              <label class="new-items_label" for="type">blood type</label>
+              <select class="new-items_select type">
+                <option value="a+">a+</option>
+                <option value="a-">a-</option>
+                <option value="o+">o+</option>
+                <option value="o-">o-</option>
+                <option value="b+">b+</option>
+                <option value="b-">b-</option>
+
+                <option value="ab+">ab+</option>
+                <option value="ab-">ab-</option>
+              </select>
+              <label class="new-items_label" for="donar">Donar Name</label>
+              <input class="new-items_input" type="text" name="donar" />
+              <label class="new-items_label" for="nationalid"
+                >National Id</label
+              >
+              <input class="new-items_input" type="text" name="nationalid" />
+              <label class="new-items_label" for="phone">Phone Number</label>
+              <input class="new-items_input" type="number" name="phone" />
+              <label class="new-items_label" for="address">Address</label>
+              <input class="new-items_input" type="text" name="address" />
+              <label class="new-items_label" for="email">Email</label>
+              <input class="new-items_input" type="email" name="email" />
+            </form>
+            <button class="add-new add-new_float addnew">create</button>
+          </div>
+        </div>
+        <div class="pd-1">
+          <div class="container">
+            <button class="add-new addMain">add Donar</button>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">donar name</th>
+                  <th scope="col">national id</th>
+                  <th scope="col">phone</th>
+                  <th scope="col">last donate year</th>
+                  <th scope="col">last donate month</th>
+                  <th scope="col">address</th>
+                  <th scope="col">email</th>
+                  <th scope="col" class="center">blood type</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="name">fathy ahmed</td>
+                  <td data-label="national id">289647562145</td>
+                  <td data-label="phone">0154782135</td>
+                  <td data-label="last year" class="center">1</td>
+                  <td data-label="last month" class="center">0</td>
+                  <td data-label="address">mansoura</td>
+                  <td data-label="email" class="email">me@yahoo.com</td>
+                  <td data-label="blood type" class="center blood-type">a-</td>
+                  <td data-label="edit" class="right">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="name">ahmed ashraf</td>
+                  <td data-label="national id">289647562145</td>
+                  <td data-label="phone">0154782135</td>
+                  <td data-label="last year" class="center">0</td>
+                  <td data-label="last month" class="center">4</td>
+                  <td data-label="address">cairo</td>
+                  <td data-label="email" class="email">mohamed@gmail.com</td>
+                  <td data-label="blood type" class="center blood-type">o+</td>
+                  <td data-label="edit" class="right">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="name">mohamed magdy</td>
+                  <td data-label="national id">289647562145</td>
+                  <td data-label="phone">0154782135</td>
+                  <td data-label="last year" class="center">0</td>
+                  <td data-label="last month" class="center">4</td>
+                  <td data-label="address">dammieta</td>
+                  <td data-label="email" class="email">mto.me@yahoo.com</td>
+                  <td data-label="blood type" class="center blood-type">ab-</td>
+                  <td data-label="edit" class="right">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- end blood donar -->
+      <!-- start patient -->
+      <div class="main-content tabcontent" id="patient">
+        <div class="new-items">
+          <div class="new-items_conatiner">
+            <h2>new patient</h2>
+            <p class="red">patient info</p>
+            <form class="new-items_form">
+              <label class="new-items_label" for="type">blood type</label>
+              <select class="new-items_select type">
+                <option value="a+">a+</option>
+                <option value="a-">a-</option>
+                <option value="o+">o+</option>
+                <option value="o-">o-</option>
+                <option value="b+">b+</option>
+                <option value="b-">b-</option>
+
+                <option value="ab+">ab+</option>
+                <option value="ab-">ab-</option>
+              </select>
+              <label class="new-items_label" for="patient">Patient Name</label>
+              <input class="new-items_input" type="text" name="patient" />
+              <label class="new-items_label" for="nationalid"
+                >National Id</label
+              >
+              <input class="new-items_input" type="text" name="nationalid" />
+              <label class="new-items_label" for="phone">Phone Number</label>
+              <input class="new-items_input" type="number" name="phone" />
+              <label class="new-items_label" for="address">Address</label>
+              <input class="new-items_input" type="text" name="address" />
+              <label class="new-items_label" for="email">Email</label>
+              <input class="new-items_input" type="email" name="email" />
+            </form>
+            <button class="add-new add-new_float addnew">create</button>
+          </div>
+        </div>
+        <div class="pd-1">
+          <div class="container">
+            <button class="add-new addMain">add patient</button>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">patient name</th>
+                  <th scope="col">national id</th>
+                  <th scope="col">phone</th>
+
+                  <th scope="col">address</th>
+                  <th scope="col">email</th>
+                  <th scope="col" class="center">blood type</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="name">fathy ahmed</td>
+                  <td data-label="national id">289647562145</td>
+                  <td data-label="phone">0154782135</td>
+
+                  <td data-label="address">mansoura</td>
+                  <td data-label="email" class="email">me@yahoo.com</td>
+                  <td data-label="blood type" class="center blood-type">a-</td>
+                  <td data-label="edit" class="right">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="name">ahmed ashraf</td>
+                  <td data-label="national id">289647562145</td>
+                  <td data-label="phone">0154782135</td>
+
+                  <td data-label="address">cairo</td>
+                  <td data-label="email" class="email">mohamed@gmail.com</td>
+                  <td data-label="blood type" class="center blood-type">o+</td>
+                  <td data-label="edit" class="right">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="name">mohamed magdy</td>
+                  <td data-label="national id">289647562145</td>
+                  <td data-label="phone">0154782135</td>
+
+                  <td data-label="address">dammieta</td>
+                  <td data-label="email" class="email">mto.me@yahoo.com</td>
+                  <td data-label="blood type" class="center blood-type">ab-</td>
+                  <td data-label="edit" class="right">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- end patient -->
+      <!-- start charity -->
+      <div class="main-content tabcontent charity" id="charity">
+        <div class="new-items">
+          <div class="new-items_conatiner">
+            <h2>new charity</h2>
+            <p class="red">charity info</p>
+            <form class="new-items_form">
+              <label class="new-items_label" for="charity">charity Name</label>
+              <input class="new-items_input" type="text" name="charity" />
+              <label class="new-items_label" for="phone">Phone Number</label>
+              <input class="new-items_input" type="number" name="phone" />
+              <label class="new-items_label" for="address">Address</label>
+              <input class="new-items_input" type="text" name="address" />
+              <label class="new-items_label" for="description"
+                >Description</label
+              >
+              <textarea class="new-items_input" name="description"></textarea>
+            </form>
+            <button class="add-new add-new_float addnew">create</button>
+          </div>
+        </div>
+        <div class="pd-1">
+          <div class="container">
+            <button class="add-new">Add Charity</button>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">charity name</th>
+                  <th scope="col">phone</th>
+                  <th scope="col" style="width:20%">address</th>
+                  <th scope="col" style="width:40%;">description</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="name">resala</td>
+                  <td data-label="phone">0154782135</td>
+                  <td data-label="address">mansoura near mansoura stadium's</td>
+                  <td data-label="description:">
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </td>
+
+                  <td data-label="edit" class="right">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="name">al-orman</td>
+                  <td data-label="phone">0154782135</td>
+                  <td data-label="address">mansoura near al-moder</td>
+                  <td data-label="description: ">
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </td>
+                  <td data-label="edit" class="right">
+                    <span
+                      ><a><i class="fas fa-edit"></i></a
+                    ></span>
+                    <span
+                      ><a><i class="fas fa-trash-alt"></i></a
+                    ></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- end charity -->
+
+      <div class="main-content tabcontent" id="account">
+        <div class="pd-1">
+          <div class="container">
+            <h2 class="title-h2">Account Setting</h2>
+            <hr />
+            <form class="account-setting">
+              <div class="account-setting__form">
+                <h3>Account Info</h3>
+                <div class="form-container">
+                  <div>
+                    <label for="firstName" class="account-setting__label"
+                      >First Name</label
+                    >
+                    <input
+                      type="text"
+                      class="account-setting__input"
+                      placeholder="First Name"
+                      name="firstName"
+                    />
+                  </div>
+                  <div>
+                    <label for="lastName" class="account-setting__label"
+                      >Last Name</label
+                    >
+                    <input
+                      type="text"
+                      class="account-setting__input"
+                      placeholder="Last Name"
+                      name="lastName"
+                    />
+                  </div>
+                  <div>
+                    <label for="emailaddress" class="account-setting__label"
+                      >Email Address</label
+                    >
+                    <input
+                      type="email"
+                      class="account-setting__input"
+                      placeholder="Email Address"
+                      name="emailaddress"
+                    />
+                  </div>
+                  <div>
+                    <label for="phonenumber" class="account-setting__label"
+                      >Phone Number</label
+                    >
+                    <input
+                      type="number"
+                      class="account-setting__input"
+                      placeholder="Phone Number"
+                      name="phonenumber"
+                    />
+                  </div>
+                  <div>
+                    <label for="city" class="account-setting__label"
+                      >City</label
+                    >
+                    <input
+                      type="text"
+                      class="account-setting__input"
+                      placeholder="City Name"
+                      name="city"
+                    />
+                  </div>
+                  <div>
+                    <label for="state" class="account-setting__label"
+                      >State</label
+                    >
+                    <input
+                      type="text"
+                      class="account-setting__input"
+                      placeholder="Sate Name"
+                      name="state"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="account-setting__form">
+                <h3>Change Password</h3>
+                <div class="form-container">
+                  <div>
+                    <label for="oldpassword" class="account-setting__label"
+                      >Old Password</label
+                    >
+                    <input
+                      type="password"
+                      class="account-setting__input"
+                      placeholder="Old Password"
+                      name="oldpassword"
+                    />
+                  </div>
+                  <div>
+                    <label for="newpassword" class="account-setting__label"
+                      >New Password</label
+                    >
+                    <input
+                      type="password"
+                      class="account-setting__input"
+                      placeholder="New Password"
+                      name="newpassword"
+                    />
+                  </div>
+                  <div>
+                    <label for="confirmpassword" class="account-setting__label"
+                      >Confirm Password</label
+                    >
+                    <input
+                      type="password"
+                      class="account-setting__input"
+                      placeholder="Confirm Password"
+                      name="confirmpassword"
+                    />
+                  </div>
+                  <div class="change">
+                    <input type="button" class="change__btn" value="Change" />
+                  </div>
+                </div>
+              </div>
+              <div class="save">
+                <button type="submit" class="save__btn">Save Changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

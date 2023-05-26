@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodDonate</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./stylee.css" />
+  </head>
+  <body>
+    <div class="nav-bc">
+      <nav class="grid main-nav">
+        <a href="index.html" class="logo">
+          <img src="./image/logo.png" alt="logo-page" />
+        </a>
+        <ul class="main-nav__link">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#blood"> bloodType</a></li>
+          <li><a href="#instructions"> Instructions</a></li>
+        </ul>
+        <ul class="main-nav__right">
+          <li class="user-btn">
+            <a href="#"><i class="fas fa-user-circle fa-2x"></i></a>
+          </li>
+          <li><a href="#" class="button"> LogIn</a></li>
+          <li><a href="#footer" class="button dark"> contact</a></li>
+        </ul>
+        <!-- Nav Mobile + tablet -->
+        <div class="menu-small ">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- End nav -->
+    <!-- Start header -->
+    <header class=" grid main-header ">
+      <section class="main-header__desc">
+        <h2>
+          Blood <span>Donate</span> <br />
+          To Save a Life
+        </h2>
+        <p>
+          Connecting volunteer blood donors with patients with minutes at
+          <span>zero cost.</span>
+        </p>
+        <a class="button " href="#"> Find Blood Now</a>
+        <!-- <p>your blood can bring a smile in another person's face.</p> -->
+      </section>
+      <section class="main-header__img">
+        <div class="animations">
+          <img src="image/header.svg" alt="header animation" />
+        </div>
+      </section>
+    </header>
+    <!-- End header -->
+
+    <!-- Start About  -->
+    <section id="about" class="about grid">
+      <div class="about__container">
+        <h2>About BloodDonate Connect</h2>
+        <p>
+          BloodDonate Connect is an innovative approach to health treatment in
+          Egypt. We provide immediate access to blood donors across Egypt, 24
+          hours a day, 7 days a week. BloodDonate Connect is one of many
+          community organizations that work together as one network.
+        </p>
+        <a href="#" class="button "
+          >Learn More About us <span class="arrow "></span
+        ></a>
+      </div>
+    </section>
+    <!-- End About  -->
+
+    <!-- Start Acceptable -->
+    <section id="blood" class="acceptable">
+      <div class="grid">
+        <div class="acceptable__header">
+          <h2>blood donation</h2>
+          <p>
+            You can usually donate blood two to three times during the year,
+            every 16 weeks so that there is enough time period for your blood to
+            build up its iron stock between each donation.
+            <span>
+              Choose Your Blood Type
+            </span>
+          </p>
+          <ul class="acceptable__header--menu">
+            <li data-target="#Type_1">A+</li>
+            <li data-target="#Type_2 ">A-</li>
+            <li data-target="#Type_3 ">AB+</li>
+            <li data-target="#Type_4 ">AB-</li>
+            <li data-target="#Type_5 ">O+</li>
+            <li data-target="#Type_6 ">O-</li>
+            <li data-target="#Type_7 ">B+</li>
+            <li data-target="#Type_8 ">B-</li>
+          </ul>
+        </div>
+        <div class="acceptable__main">
+          <!-- blood type A+ -->
+          <div class=" main-grid " id="Type_1" data-target-content>
+            <div class="content-desc">
+              <h2 class="content-desc__header">A+</h2>
+              <div class="content-desc__main">
+                <p>
+                  The bearer of this superfamily is characterized by the body
+                  the process of metabolism is very rapid sensitivity of the
+                  gastrointestinal tract but has a very weak immune system has
+                  the capacity to cope with environmental changes and food there
+                  are some foods that fit his body like
+                  <span> seafood, vegetables, legumes </span> and prefers not to
+                  eat red meat and dairy derivatives, wheat . Blood Type A is
+                  more likely to
+                  <span>
+                    accumulate and accumulate mucosa in the digestive tract than
+                    other species.</span
+                  >
+                </p>
+                <ul class="main-type">
+                  <li>
+                    <h3>Receive</h3>
+                    <ul>
+                      <li>A+</li>
+                      <li>A-</li>
+                      <li>O+</li>
+                      <li>O-</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h3>Donates</h3>
+                    <ul>
+                      <li>A+</li>
+                      <li>AB+</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-img">
+              <img src="image/bloodType.png" alt="acceptable" />
+            </div>
+          </div>
+          <!-- blood type A- -->
+          <div class="main-grid" id="Type_2" data-target-content>
+            <div class="content-desc">
+              <h2 class="content-desc__header">A-</h2>
+              <div class="content-desc__main">
+                <p>
+                  The bearer of this superfamily is characterized by the body
+                  the process of metabolism is very rapid sensitivity of the
+                  gastrointestinal tract but has a very weak immune system has
+                  the capacity to cope with environmental changes and food there
+                  are some foods that fit his body like
+                  <span> seafood, vegetables, legumes </span> and prefers not to
+                  eat red meat and dairy derivatives, wheat . Blood Type A is
+                  more likely to
+                  <span>
+                    accumulate and accumulate mucosa in the digestive tract than
+                    other species.</span
+                  >
+                </p>
+                <ul class="main-type">
+                  <li>
+                    <h3>Receive</h3>
+                    <ul>
+                      <li>A-</li>
+                      <li>O-</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h3>Donates</h3>
+                    <ul>
+                      <li>A+</li>
+                      <li>A-</li>
+                      <li>AB+</li>
+                      <li>AB-</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-img">
+              <img src="image/bloodType.png" alt="acceptable" />
+            </div>
+          </div>
+
+          <!-- blood type Ab+ -->
+          <div class="main-grid" id="Type_3" data-target-content>
+            <div class="content-desc">
+              <h2 class="content-desc__header">AB+</h2>
+              <div class="content-desc__main">
+                <p>
+                  It's called the stingy species because it doesn't accept blood
+                  from any other species, but it only gives blood to its
+                  species. The bearer of this superfamily is characterized by
+                  device regions of weak and foods that fit the nature of his
+                  body is a combination of special food with A blood type B in
+                  addition to that, his body more susceptible to certain
+                  diseases
+                  <span>such as diabetes, anemia, and cancer </span>.
+                </p>
+                <ul class="main-type">
+                  <li>
+                    <h3>Receive</h3>
+                    <ul>
+                      <li>Every One</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h3>Donates</h3>
+                    <ul>
+                      <li>AB+</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-img">
+              <img src="image/bloodType.png" alt="acceptable" />
+            </div>
+          </div>
+
+          <!-- blood type Ab- -->
+          <div class="main-grid" id="Type_4" data-target-content>
+            <div class="content-desc">
+              <h2 class="content-desc__header">AB-</h2>
+              <div class="content-desc__main">
+                <p>
+                  It's called the stingy species because it doesn't accept blood
+                  from any other species, but it only gives blood to its
+                  species. The bearer of this superfamily is characterized by
+                  device regions of weak and foods that fit the nature of his
+                  body is a combination of special food with A blood type B in
+                  addition to that, his body more susceptible to certain
+                  diseases
+                  <span> such as diabetes, anemia, and cancer</span>.
+                </p>
+                <ul class="main-type">
+                  <li>
+                    <h3>Receive</h3>
+                    <ul>
+                      <li>AB-</li>
+                      <li>A-</li>
+                      <li>B-</li>
+                      <li>O-</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h3>Donates</h3>
+                    <ul>
+                      <li>AB+</li>
+                      <li>AB-</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-img">
+              <img src="image/bloodType.png" alt="acceptable" />
+            </div>
+          </div>
+
+          <!-- blood type o+ -->
+          <div class="main-grid" id="Type_5" data-target-content>
+            <div class="content-desc">
+              <h2 class="content-desc__header">O+</h2>
+              <div class="content-desc__main">
+                <p>
+                  Allow a platoon of blood-precious because it does not contain
+                  antibodies to the head of this platoon does not take blood
+                  only from the species itself, but it gives the blood of the
+                  factions other, heat blood type O is characterized by the fact
+                  that her digestive system strong and suitable for an active
+                  also there is a range of foods to fit his body too
+                  <span>
+                    such as vegetables, fruits, red meat, legumes, and wheat </span
+                  >. These persons are exposed to coagulopathy, clots,
+                  arthritis, allergies and ulcers.
+                </p>
+                <ul class="main-type">
+                  <li>
+                    <h3>Receive</h3>
+                    <ul>
+                      <li>O+</li>
+                      <li>O-</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h3>Donates</h3>
+                    <ul>
+                      <li>AB+</li>
+                      <li>O+</li>
+                      <li>B+</li>
+                      <li>A+</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-img">
+              <img src="image/bloodType.png" alt="acceptable" />
+            </div>
+          </div>
+
+          <!-- blood type o- -->
+          <div class="main-grid" id="Type_6" data-target-content>
+            <div class="content-desc">
+              <h2 class="content-desc__header">O-</h2>
+              <div class="content-desc__main">
+                <p>
+                  Allow a platoon of blood-precious because it does not contain
+                  antibodies to the head of this platoon does not take blood
+                  only from the species itself, but it gives the blood of the
+                  factions other, heat blood type O is characterized by the fact
+                  that her digestive system strong and suitable for an active
+                  also there is a range of foods to fit his body too
+                  <span>
+                    such as vegetables, fruits, red meat, legumes, and
+                    wheat</span
+                  >. These persons are exposed to coagulopathy, clots,
+                  arthritis, allergies and ulcers.
+                </p>
+                <ul class="main-type">
+                  <li>
+                    <h3>Receive</h3>
+                    <ul>
+                      <li>O-</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h3>Donates</h3>
+                    <ul>
+                      <li>Every One</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-img">
+              <img src="image/bloodType.png" alt="acceptable" />
+            </div>
+          </div>
+
+          <!-- blood type B+ -->
+          <div class="main-grid" id="Type_7" data-target-content>
+            <div class="content-desc">
+              <h2 class="content-desc__header">B+</h2>
+              <div class="content-desc__main">
+                <p>
+                  The bearer of this superfamily is characterized by the ability
+                  to cope with changes in food and Environmental has a strong
+                  immune system and a nervous system balanced .There are a range
+                  of foods suitable to the nature of his body but would prefer
+                  not to excessive in some foods
+                  <span>
+                    such as legumes, vegetables, milk and dairy products and
+                    fruits </span
+                  >. The risks of this species are their vulnerability to
+                  diseases such as osteoporosis, diabetes and chronic fatigue.
+                </p>
+                <ul class="main-type">
+                  <li>
+                    <h3>Receive</h3>
+                    <ul>
+                      <li>B+</li>
+                      <li>B-</li>
+                      <li>O+</li>
+                      <li>O-</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h3>Donates</h3>
+                    <ul>
+                      <li>AB+</li>
+                      <li>B+</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-img">
+              <img src="image/bloodType.png" alt="acceptable" />
+            </div>
+          </div>
+
+          <!-- blood type B- -->
+          <div class="main-grid" id="Type_8" data-target-content>
+            <div class="content-desc">
+              <h2 class="content-desc__header">B-</h2>
+              <div class="content-desc__main">
+                <p>
+                  The bearer of this superfamily is characterized by the ability
+                  to cope with changes in food and Environmental has a strong
+                  immune system and a nervous system balanced .There are a range
+                  of foods suitable to the nature of his body but would prefer
+                  not to excessive in some foods
+                  <span>
+                    such as legumes, vegetables, milk and dairy products and
+                    fruits</span
+                  >. The risks of this species are their vulnerability to
+                  diseases such as osteoporosis, diabetes and chronic fatigue.
+                </p>
+                <ul class="main-type">
+                  <li>
+                    <h3>Receive</h3>
+                    <ul>
+                      <li>B-</li>
+                      <li>O-</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h3>Donates</h3>
+                    <ul>
+                      <li>B+</li>
+                      <li>B-</li>
+                      <li>AB+</li>
+                      <li>AB-</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-img">
+              <img src="image/bloodType.png" alt="acceptable" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Acceptable -->
+    <!-- Start section care -->
+    <!-- start Pre donation -->
+    <section id="instructions" class="care-section grid">
+      <h2>Pre donation instructions</h2>
+      <div class="care-section__content">
+        <div>
+          <img src="image/sleep.png" alt="sleep photo" />
+          <p>Get enough sleep on the night of the donation.</p>
+        </div>
+        <div>
+          <img src="image/eat.png" alt="Eat photo" />
+          <p>Eat a balanced meal two hours before donating.</p>
+        </div>
+        <div>
+          <img src="image/no-drink.png" alt="no drink photo" />
+          <span class="icon icon--error"></span>
+          <p>You should not drink liquids with caffeine.</p>
+        </div>
+        <div>
+          <img src="image/Drink.png" alt="drink photo" />
+          <p>You should drink more fluids than usual.</p>
+        </div>
+      </div>
+    </section>
+    <!-- End Pre donation -->
+
+    <!-- Start Donation instructions -->
+    <section class="instructions grid ">
+      <div class="instructions-header">
+        <h2>Donation instructions</h2>
+        <span class="icon"></span>
+      </div>
+      <div class="instructions-main">
+        <div class="instructions-main__desc">
+          <div class="left">
+            <img src="image/reception.png" alt="image some instructions" />
+          </div>
+          <div class="right">
+            <h3>Go to the reception</h3>
+            <p>The donor starts their journey by contacting the registry.</p>
+          </div>
+        </div>
+        <div class="instructions-main__desc">
+          <div class="left">
+            <img src="image/blood sample.png" alt="image some instructions" />
+          </div>
+          <div class="right">
+            <h3>Take blood sample</h3>
+            <p>
+              Take a blood sample and test to determine whether or not to
+              donate.
+            </p>
+          </div>
+        </div>
+        <div class="instructions-main__desc">
+          <div class="left">
+            <img
+              src="image/Doctor's permit.png"
+              alt="image some instructions"
+            />
+          </div>
+          <div class="right">
+            <h3>Doctor's permit</h3>
+            <p>The doctor makes a decision about accepting a blood donation.</p>
+          </div>
+        </div>
+        <div class="instructions-main__desc">
+          <div class="left">
+            <img src="image/eat.png" alt="image some instructions" />
+          </div>
+          <div class="right">
+            <h3>Food</h3>
+            <p>
+              Before donating it is necessary to eat a meal, do not donate blood
+              on an empty stomach.
+            </p>
+          </div>
+        </div>
+        <div class="instructions-main__desc">
+          <div class="left">
+            <img src="image/donation room.png" alt="image some instructions" />
+          </div>
+          <div class="right">
+            <h3>Blood donation</h3>
+            <p>
+              The donation is made in the donation room.
+            </p>
+          </div>
+        </div>
+        <div class="instructions-main__desc">
+          <div class="left">
+            <img
+              src="image/Donors certificate.png"
+              alt="image some instructions"
+            />
+          </div>
+          <div class="right">
+            <h3>Donor's certificate</h3>
+            <p>
+              After donating, the donor's certificate will be issued.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Donation instructions -->
+    <!-- start Post donation -->
+    <section id="instructions" class="care-section grid">
+      <h2>Post donation instructions</h2>
+      <div class="care-section__content">
+        <div>
+          <img src="image/Drink.png" alt="drink photo" />
+          <p>You should drink more fluids than usual.</p>
+        </div>
+        <div>
+          <img src="image/break.png" alt="break photo" />
+          <p>After donating, take a break and snack.</p>
+        </div>
+        <div>
+          <img src="image/Leave.png" alt="leave photo" />
+          <p>After 10-15 minutes you can leave the place.</p>
+        </div>
+        <div>
+          <img src="image/gym.png" alt="gym photo" />
+          <span class="icon icon--error"></span>
+          <p>Avoid heavy physical activity for 5 hours.</p>
+        </div>
+      </div>
+    </section>
+    <!-- End Post donation -->
+    <!-- End section care -->
+
+    <!-- Start footer -->
+    <footer class="footer" id="footer">
+      <div class="footer__containers">
+        <div>
+          <h2 class="footer__h2">Blood Donate<span>e</span></h2>
+          <div class="footer__icons">
+            <span><i class="fab fa-facebook fa-lg"></i></span>
+            <span><i class="fab fa-twitter fa-lg"></i></span>
+            <span><i class="fab fa-instagram fa-lg"></i></span>
+            <span><i class="fab fa-youtube fa-lg"></i></span>
+            <span><i class="fab fa-linkedin-in fa-lg"></i></span>
+          </div>
+          <p class="footer__p">
+            &copy; 2020 Created By TownMonkeys All Rights Reserved
+          </p>
+        </div>
+        <div>
+          <h3 class="footer__h3">Our Newsletter</h3>
+          <p class="footer__p">Enter Your Email To Get Our News Update</p>
+          <form>
+            <input
+              class="footer__input"
+              type="email"
+              name="subscribe"
+              placeholder="Enter Your Email"
+            />
+            <button class="button dark">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__quotes">
+        <p class="quotes">Every Blood Donor Is A Life Saver</p>
+      </div>
+    </footer>
+    <!-- End footer -->
+    <!-- loading page -->
+    <!-- <div class="loader-page">
+      <div class="loader">
+        <svg width="16px" height="12px">
+          <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+          <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+        </svg>
+      </div>
+    </div> -->
+    <!-- loading page -->
+
+    <script src="index.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script>
+      gsap.from(".main-header__img", { opacity: 0, duration: 2, x: 200 });
+      gsap.from(".main-header__desc", { opacity: 0, duration: 1, y: -100 });
+    </script>
+  </body>
+</html>
