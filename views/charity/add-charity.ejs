@@ -1,0 +1,39 @@
+<%- include('../includes/navigation.ejs') %>
+<section class="main">
+  <div class="main-content tabcontent">
+    <form action="/add-charity" method="POST">
+
+      <div class="new-items">
+        <div class="new-items_conatiner">
+          <h2>new charity</h2>
+          <p class="red">charity info</p>
+          <form action="/add-charity" method="POST" class="new-items_form">
+            <label class="new-items_label" for="charityName">Charity Name</label>
+            <input class="new-items_input" type="text" name="charityName" id="charityName" />
+      
+            <label class="new-items_label" for="phoneNumber">Phone</label>
+            <input class="new-items_input" type="text" name="phoneNumber" id="phoneNumber" />
+      
+            <label class="new-items_label" for="address">Address</label>
+            <input class="new-items_input" type="text" name="address" id="address" />
+      
+            <label class="new-items_label" for="description">Description</label>
+            <textarea class="new-items_input" name="description" id="description" cols="30" rows="10" placeholder="Enter your Description Here"></textarea>
+            
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+            <button class="add-new add-new_float addnewrs" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+  </div>
+</section>
+
+<%- include('../includes/bottom.ejs') %>
+
+
+
+
+
+
+
+<%- include('../includes/bottom.ejs') %>

@@ -1,0 +1,59 @@
+<%- include('../includes/navigation.ejs') %>
+
+  <section class="main">
+    <div class="main-content tabcontent" id="needBlood">
+      
+ <div class="pd-1">
+      <div class="container">
+         <a href="/add-city" class="add-new addMain">new city</a>
+        <table>
+       <thead>
+         <tr>
+           <th scope="col">City</th>
+           <th scope="col">Hospital</th>
+           <th scope="col">Address</th>
+           <th scope="col">Phone</th>
+         </tr>
+       </thead>
+       <tbody>
+        <% if (cities.length > 0) {
+          let i = itemCounterStartInCurrentPage;
+          for (let city of cities) { %>
+         <tr>
+           <td data-label="cityName"><%= city.name %></td>
+           <td data-label="hospital"><%= city.hospital %></td>
+           <td data-label="address"> <%= city.address %></td>
+           <td data-label="phoneNumber"> <%= city.phoneNumber %></td>
+            
+     
+           <% if (isAuthenticated && city.userId._id.toString() === currentUser._id.toString()) { %>
+            <td data-label="edit" class="right">
+              <span><a href="/edit-city/<%= city._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
+              <span>
+                <form action="/delete-city" method="POST" style="display: inline-block;">
+                   <input type="hidden" value="<%= city._id %>" name="cityId">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                  <button style="border: none;"  type="submit"><i class="fas fa-trash-alt"></i></button>
+                </form>
+              </span>
+            </td>
+            <% } %> 
+            
+          </tr> 
+          <% i--; } %>
+        <% } else { %>
+          <div class="not-found">
+          <p><i class="fas fa-exclamation-triangle"></i> No Cities found.</p>
+          </div>
+          <% } %>
+       
+           
+       </tbody>
+    </table>
+      </div> 		
+ </div>
+</div>
+  </section>
+  
+
+  <%- include('../includes/bottom.ejs') %>

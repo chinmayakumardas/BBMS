@@ -1,0 +1,36 @@
+ <%- include('../includes/navigation.ejs') %>
+ <section class="main">
+  <div class="main-content tabcontent">
+    <form action="/add-charity" method="POST">
+
+      <div class="new-items">
+        <div class="new-items_conatiner">
+          <h2>new charity</h2>
+          <p class="red">charity info</p>
+          <form action="/edit-charity" method="POST" class="new-items_form">
+            <label class="new-items_label" for="charityName">Charity Name</label>
+            <input class="new-items_input" type="text" name="charityName" id="charityName"   value="<% if (editing) { %><%= charity.charityName %><% } %>"/>
+      
+            <label class="new-items_label" for="phoneNumber">Phone</label>
+            <input class="new-items_input" type="text" name="phoneNumber" id="phoneNumber"  value="<% if (editing) { %><%= charity.phoneNumber %><% } %>"/>
+      
+            <label class="new-items_label" for="address">Address</label>
+            <input class="new-items_input" type="text" name="address" id="address"  value="<% if (editing) { %><%= charity.address %><% } %>" />
+      
+            <label class="new-items_label" for="description">Description</label>
+            <textarea class="new-items_input" name="description" id="description" cols="30" rows="10">
+              <%if (editing) {%><%= charity.description%><% } %>
+            </textarea>
+            <% if (editing) { %>
+              <input type="hidden" value="<%= charity._id %>" name="charityId">
+              <% } %>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+            <button class="add-new add-new_float addnewrs" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+  <%- include('../includes/bottom.ejs') %>

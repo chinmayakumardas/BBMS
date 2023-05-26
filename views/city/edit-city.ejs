@@ -1,0 +1,41 @@
+<%- include('../includes/navigation.ejs') %>
+
+<section class="main">
+ <div class="main-content tabcontent" id="city">
+   <div class="new-items">
+     <div class="new-items_conatiner">
+       <h2>new city</h2>
+       <p class="red">City info</p>
+       <form action="/edit-city" method="POST" class="new-items_form">
+         <label for="cityName" class="new-items_label">City</label>
+         <input class="new-items_input" type="text" name="cityName" id="cityName" value="<% if (editing) { %><%= city.cityName %><% } %>"/>
+   
+         <label for="nationalId" class="new-items_label">Hospital</label>
+         <input  class="new-items_input" type="text" name="hospital" id="hospital" value="<% if (editing) { %><%= city.hospital %><% } %>">
+   
+         <label for="phoneNumber" class="new-items_label">Phone Number</label>
+         <input class="new-items_input" type="text" name="phoneNumber" id="phoneNumber" value="<% if (editing) { %><%= city.phoneNumber %><% } %>" />
+   
+         <label for="address" class="new-items_label">Address</label>
+         <input class="new-items_input" type="text" name="address" id="address"  value="<% if (editing) { %><%= city.address %><% } %>" />
+   
+        
+         
+         <% if (editing) { %>
+           <input type="hidden" value="<%= city._id %>" name="cityId">
+           <% } %>
+         
+         <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+         <button class="add-new add-new_float addnewrs" type="submit">Submit</button>
+       </form>
+      
+     </div>
+   </div>
+ </div>
+</section>
+
+
+
+
+ 
+ <%- include('../includes/bottom.ejs') %>

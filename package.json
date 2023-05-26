@@ -1,46 +1,37 @@
 {
-  "name": "blooddonar",
+  "name": "bank_blooddonor",
   "version": "1.0.0",
-  "description": "platform to help people to connect with blood donar in his/her zone or country",
-  "main": "index.js",
+  "description": "\"Graduation project\"",
+  "main": "app.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js --open",
-    "build": "webpack --config webpack.prod.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production MONGO_USER=mego MONGO_PASSWORD=Manchesterunited4ever MONGO_DEFAULT_DATABASE=bloodBank node app.js",
+    "start-server": "node app.js",
+    "start:dev": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MhamedEl-shahawy/Bank_BloodDonar.git"
-  },
-  "author": "TownMonkeys Team",
+  "author": "Mohammed Aboabdo",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MhamedEl-shahawy/Bank_BloodDonar/issues"
-  },
-  "homepage": "https://github.com/MhamedEl-shahawy/Bank_BloodDonar#readme",
   "devDependencies": {
-    "css-loader": "^3.5.2",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "file-loader": "^5.1.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "image-webpack-loader": "^6.0.0",
-    "postcss-loader": "^3.0.0",
-    "precss": "^4.0.0",
-    "style-loader": "^1.1.4",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^4.2.2"
+    "body-parser": "^1.19.0",
+    "morgan": "^1.10.0",
+    "nexmo": "^2.7.0",
+    "nodemon": "^2.0.4",
+    "socket.io": "^2.3.0"
   },
   "dependencies": {
-    "@glidejs/glide": "^3.4.1",
-    "autoprefixer": "^9.7.6",
-    "clean-webpack-plugin": "^3.0.0",
-    "postcss": "^7.0.27",
-    "postcss-scss": "^2.0.0",
-    "swiper": "^5.3.7"
-  },
-  "keywords": []
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.3.3",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.5.0",
+    "helmet": "^3.23.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.18",
+    "nodemailer": "^6.4.8",
+    "nodemailer-sendgrid-transport": "^0.2.0"
+  }
 }

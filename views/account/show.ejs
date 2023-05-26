@@ -1,0 +1,89 @@
+<%- include('../includes/navigation.ejs') %>
+
+<section class="main">
+  <div class="main-content tabcontent" id="account">
+    <div class="pd-1">
+      <div class="container">
+        <h2 class="title-h2">Account Setting</h2>
+        <hr />
+        <form class="account-setting">
+          <div class="account-setting__form">
+            <h3>Account Info</h3>
+            <div class="form-container block">
+              <div>
+                <p class="account-info"><span class="label">First Name: </span><span class="label-info"><%= user.firstName %></span></p>
+              </div>
+              <div>
+                <p  class="account-info"><span class="label">Last Name: </span><span class="label-info"> <%= user.lastName %></span></p>
+              </div>
+              <div>
+                <p  class="account-info"><span class="label">E-mail: </span><span class="label-info"><%= user.email %></span></p>
+              </div>
+              <div>
+               <p  class="account-info"><span class="label">Phone Number: </span><span class="label-info"><%= user.phoneNumber %></span></p>
+              </div>
+              <div>
+                <p  class="account-info"><span class="label">City: </span><span class="label-info"><%= user.city %></span></p>
+              </div>
+              <div>
+                <p  class="account-info"><span class="label">State: </span><span class="label-info"><%= user.state %></span></p>
+              </div>
+              <div>
+               <p  class="account-info hidden"><span class="label">Blood Type: </span><span class="label-info"><%= user.bloodType %></span></p>
+              </div>
+            </div>
+          </div>
+          <div class="account-setting__form">
+            <h2 class="account-setting__h2">You can Change your password below:- </h2>
+            <h3 class="account-setting__h3"><a href="/user/password/<%= user.id %>/edit">Change Password</a></h3>
+          </div>
+          <div class="save">
+            <a href="/user/<%= user.id %>/edit" class="save__btn">Edit</a>
+          </div>
+      </div>
+      </form>
+    </div>
+  </div>
+  </div>
+</section>
+<!--
+  <main class="myContainer">
+
+    <div>
+      <label >First Name:</label>
+      <span><%= user.firstName %></span>
+    </div>
+
+    <div>
+      <label >Last Name:</label>
+      <span><%= user.lastName %></span>
+    </div>
+    <div>
+      <label >E-mail:</label>
+      <span><%= user.email %></span>
+    </div>
+
+    <div>
+      <label >City:</label>
+      <span><%= user.city %></span>
+    </div>
+
+    <div>
+      <label >State:</label>
+      <span><%= user.state %></span>
+    </div>
+
+    <div>
+      <label >Phone:</label>
+      <span><%= user.phoneNumber %></span>
+    </div>
+
+    <div>
+      <label >Blood type:</label>
+      <span><%= user.bloodType %></span>
+    </div>
+
+    <a href="/user/<%= user.id %>/edit">Edit</a>
+  </main> -->
+
+<%- include('../includes/bottom.ejs') %>

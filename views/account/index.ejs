@@ -1,0 +1,18 @@
+  <%- include('../includes/navigation.ejs') %>
+
+  <main class="container pd-1">
+  
+    <% users.forEach(user => { %>
+      <%if (isAuthenticated && user._id.toString() === currentUser._id.toString()) {%>
+      <div class="setting-center">
+      <p class="account__bio">General Account Settings</p>
+      <p class="account__bio">You can edit or view your details from here</p> 
+      <a href="/user/<%= user.id %>" class="view">View </a>
+      <a href="/user/<%= user.id %>/edit" class="edit">Edit</a>
+      </div>
+      <% } %>
+    <% }) %>
+
+  </main>
+
+  <%- include('../includes/bottom.ejs') %>

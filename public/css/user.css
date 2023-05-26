@@ -1,0 +1,681 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+:root {
+  /* --backgroundColor: #f2f5fa; */
+  --backgroundColor: #eaeff7;
+  --main-color: #4b48b1;
+  --second-color: #0f1048;
+  --text-color: #7375a8;
+  --heading-color: #2b2c34;
+  --paragraph-color: #6f7178;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Rubik", sans-serif;
+  background-color: var(--backgroundColor);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--a-color);
+}
+
+ul {
+  list-style: none;
+}
+
+.nav {
+  grid-area: nav;
+  width: 58%;
+  height: 9vh;
+  margin: 0 auto;
+}
+
+.nav__link {
+  background-color: #fffffe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  border-radius: 10px;
+  height: 8vh;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav__link li {
+  padding: 0.9em 0.6em;
+  font-size: 1.1em;
+  transition: 0.5s ease-in-out;
+}
+
+.nav__link li.avatar {
+  margin: auto 1em;
+}
+.nav__link li.avatar img {
+  width: 17px;
+  height: 30%;
+  transform: scale(2.6);
+}
+
+.nav__link li.active {
+  font-weight: bold;
+}
+
+.nav__link li.active a {
+  color: var(--second-color);
+}
+
+.nav__link li a {
+  padding-bottom: 0.4em;
+  color: var(--heading-color);
+}
+.nav__link li i {
+  color: var(--heading-color);
+  padding-right: 2px;
+}
+.nav__title {
+  position: relative;
+}
+
+.nav__title::before {
+  content: attr(aria-label);
+  opacity: 0;
+  position: absolute;
+  top: 25px;
+  width: 110px;
+  text-align: center;
+  padding: 0.3em;
+  font-size: 0.9em;
+  color: white;
+  border-radius: 3px;
+  background-color: #555;
+}
+
+.nav__link li:hover a,
+.nav__link li:hover i {
+  color: var(--main-color);
+  -webkit-animation: navbarHover 1s ease;
+  animation: navbarHover 1s ease;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+.nav__link .log__form button {
+  color: var(--heading-color);
+  background-color: #fffffe;
+  font-size: 1em;
+  border: 0;
+  padding-left: 0.2em;
+  cursor: pointer;
+}
+.nav__link .log__form span i {
+  padding-right: 4px;
+}
+.nav__link .log__form span:hover {
+  color: red;
+}
+
+main {
+  grid-area: main;
+  margin: 0 auto;
+  height: 85vh;
+  background-color: #eaeff7;
+}
+
+main .main__info {
+  width: 60%;
+  margin: 0.3em auto;
+}
+main .main__info .header {
+  color: var(--heading-color);
+  margin: 0.5em;
+  text-align: center;
+}
+
+main .main__info p {
+  margin-top: 1.5em;
+  line-height: 1.9;
+  color: var(--paragraph-color);
+  text-align: center;
+}
+main .main__info p .span-header {
+  color: var(--heading-color);
+  font-size: 1.2em;
+}
+main .main__info p.warning {
+  width: 85%;
+  font-size: 1.1em;
+  text-align: center;
+  margin: auto;
+}
+main .main__info p.warning i {
+  color: red;
+}
+main .main__info p.warningDonation {
+  width: 75%;
+  font-size: 0.9em;
+  text-align: center;
+  margin: auto;
+}
+main .main__info p.warningDonation i {
+  color: red;
+}
+main .main__info p.warning-date {
+  text-align: start;
+}
+.table-dates {
+  margin: 2em auto 0;
+  text-align: center;
+  border-radius: 15px;
+}
+.table-dates tr th {
+  font-size: 1.3em;
+}
+.table-dates tr th,
+.table-dates tr td {
+  border-radius: 15px;
+  height: 5vh;
+  width: 300px;
+  background-color: #fffffe8a;
+}
+
+main .main__info .form-user {
+  width: 65%;
+  margin: 1.2em auto;
+  text-align: center;
+  padding: 0.5em 1em 1em;
+  background-color: #fffffe;
+  border-radius: 5px;
+}
+
+main .main__info .form-user label {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.form-user input {
+  margin-bottom: 0.5em;
+  text-align: start;
+}
+.form-user table {
+  margin: 1em auto;
+  text-align: start;
+}
+.form-user table tr {
+  text-align: start;
+}
+
+.form-user table tr td {
+  height: 5vh;
+  padding: 0.5em 0;
+  width: 240px;
+}
+.form-user table tr td label.value {
+  font-weight: normal;
+  color: var(--main-color);
+}
+
+.form-user table tfoot td {
+  text-align: center;
+  margin-top: 5em;
+}
+
+.form-user input[type="text"] {
+  padding: 0.5em;
+  color: black;
+  background: #fefefe;
+  width: 8vw;
+  height: 5vh;
+  font-size: 1.1em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+.form-user input[type="radio"] {
+  cursor: pointer;
+}
+
+.form-user .form-group label {
+  padding: 6px;
+  color: var(--heading-color);
+}
+
+.form-user select {
+  color: black;
+  background: #fefefe;
+  width: 8vw;
+  height: 5vh;
+  font-size: 1.1em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+.form-user select option {
+  color: black;
+  font-size: 1.1em;
+}
+
+main .main__info .form-user button {
+  display: inline-block;
+  width: 30%;
+  padding: 0.5em 1em;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+  background: var(--main-color);
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+main .main__info .form-user a.btn-back {
+  background: var(--main-color);
+  color: white;
+  padding: 0.5em 1em;
+}
+
+main .main__info .form-user a:active {
+  position: relative;
+  top: 1px;
+}
+
+main .main__info--links {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+  margin-top: 2em;
+  -ms-grid-columns: (minmax(200px, 1fr)) [auto-fill];
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5em;
+}
+
+main .main__info--links div {
+  border: 2px solid black;
+  padding: 1.5em 1em;
+}
+
+main .main__info--links div i {
+  color: var(--main-color);
+}
+
+main .main__info--links div h3 {
+  color: black;
+}
+.btn {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+  font-size: 16px;
+}
+.password {
+  color: red;
+}
+
+.password:hover {
+  font-weight: bold;
+}
+
+.main__content {
+  width: 80%;
+  height: 100%;
+  border: solid 1px #e1e1e8;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1em;
+  margin-left: 10px;
+}
+.main__content-info {
+  width: 44%;
+  height: 120px;
+}
+.main__a {
+  color: #00a8c4;
+  text-decoration: underline;
+}
+
+input[type="password"] {
+  padding: 0.5em;
+  color: black;
+  background: #fefefe;
+  width: 12vw;
+  height: 5vh;
+  font-size: 1.1em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+div .info {
+  box-sizing: border-box;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  min-height: 50px;
+  height: auto;
+  line-height: 20px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  background: #d9edf7;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+.info {
+  background-color: white;
+}
+
+div.row {
+  color: #242424;
+  font: 14px Roboto, sans-serif;
+  margin: 0px - 15px;
+}
+div p {
+  margin: 0px 0px 10px;
+}
+
+.sub_area {
+  border: solid 1px #e1e1e8;
+  background-color: #f7f7f9;
+  padding: 10px;
+  border-radius: 4px 4px 4px 4px;
+}
+
+h5.underline {
+  color: #242424;
+  font: 16px Robot, sans-serif;
+  margin: 10px 0px;
+}
+/* form Search */
+.form-search {
+  /* border: 1px solid var(--text-color); */
+  padding: 10px;
+  width: 60%;
+  margin: 0 auto;
+}
+.form-search h4 {
+  color: var(--main-color);
+  text-align: center;
+  margin: 0.3em auto 0.5em;
+}
+.form-search .result {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  margin-top: 10px;
+  padding: 0.6em;
+  background-color: #fffffe;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+.form-search .result .btn {
+  background-color: var(--main-color);
+}
+.form-search .result .btn:active {
+  position: relative;
+  top: 2px;
+}
+.form-search .result .grid {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  align-items: center;
+}
+.form-search .result .grid img {
+  max-width: 110%;
+  margin-bottom: 0.3em;
+}
+.form-search .result .grid .result__desc {
+  color: var(--second-color);
+  font-size: 1.1em;
+  margin-left: 0.7em;
+}
+.form-search .result .grid .result__desc div:last-of-type {
+  color: red;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.disabled {
+  display: none;
+}
+.user-search {
+  width: 80%;
+  margin: 1.2em auto 0;
+  text-align: center;
+  border-bottom: 1px solid #fffffe;
+}
+.user-search input {
+  padding: 0.5em;
+  color: var(--heading-color);
+  width: 14vw;
+  height: 5vh;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: 1px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.14);
+  border-radius: 3px;
+  margin-bottom: 1em;
+  background-color: #fffffe;
+}
+
+.user-search button {
+  background-color: var(--main-color);
+  color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  margin-left: 1em;
+  cursor: pointer;
+}
+.user-search button:active {
+  position: relative;
+  top: 2px;
+}
+
+/* End form Search */
+/* Donation Information */
+.donation {
+  background-color: #fffffe;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 500px;
+  border-radius: 10px;
+  margin: 5em auto;
+}
+.donation .donation__img {
+  width: 25%;
+  position: relative;
+  top: -4em;
+  margin-bottom: 0.5em;
+  border-radius: 50%;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
+}
+.donation .donation__information {
+  position: relative;
+  top: -5em;
+}
+.donation .donation__information h3 {
+  color: var(--heading-color);
+  margin: 0.7em;
+  text-transform: capitalize;
+}
+.donation .donation__information > p {
+  color: var(--heading-color);
+  margin: auto;
+  padding-bottom: 1em;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid var(--text-color);
+  width: 70%;
+}
+.donation .donation__information p span {
+  padding-left: 6em;
+  text-transform: capitalize;
+  /* font-weight: bold; */
+}
+.donation .donation__information p span > i {
+  color: red;
+  transform: rotate(0.5turn);
+}
+.donation__information h4 {
+  color: var(--heading-color);
+  margin: 0.5em;
+}
+.donation__information h4 > i {
+  padding-right: 0.5em;
+}
+.donation__information--date > p {
+  font-weight: bold;
+}
+.donation__information--date .past {
+  color: red;
+}
+.donation__information--date .future {
+  color: green;
+}
+
+/*End  Donation Information */
+
+/* animation */
+@-webkit-keyframes navbarHover {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes navbarHover {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .nav {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    width: 85%;
+  }
+  .nav__link li {
+    padding: 0 0.9em;
+    font-size: 1em;
+    text-align: center;
+  }
+  main .main__info {
+    width: 75%;
+  }
+  main .main__info p.warning {
+    width: 100%;
+    font-size: 1em;
+  }
+  .user-search input {
+    width: 25vw;
+  }
+  .form-search {
+    width: 75%;
+  }
+  main .main__info .form-user {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .nav {
+    max-width: 75%;
+  }
+  .nav__link li a span {
+    display: none;
+  }
+  .nav__link li.avatar {
+    display: none;
+  }
+  .nav__link .log__form button span {
+    display: none;
+  }
+  .nav__link li i {
+    /* padding-right: 1em; */
+    font-size: 1.5em;
+  }
+  .nav__title:hover:before {
+    opacity: 1;
+  }
+  main .main__info {
+    width: 90%;
+  }
+  main .main__info p {
+    font-size: 1.1em;
+  }
+  .user-search input {
+    width: 40vw;
+  }
+  main .main__info p.warningDonation {
+    width: 90%;
+  }
+  main .main__info .form-user {
+    width: 100%;
+  }
+  .form-user table tr td.edit input {
+    width: 60%;
+  }
+  input[type="password"] {
+    width: 35vw;
+  }
+  .donation {
+    width: 65vw;
+  }
+  .donation .donation__information {
+    top: -3em;
+  }
+  .donation .donation__img {
+    top: -2em;
+  }
+  .donation .donation__information p span {
+    padding-left: 1em;
+  }
+}

@@ -1,0 +1,58 @@
+
+<%- include('../includes/navigation.ejs') %>
+
+
+<section class="main">
+    <div class="main-content tabcontent" id="bags">
+
+      <div class="pd-1">
+        <div class="container">
+          <a href="/add-bag" class="add-new addMain">new bags</a>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">blood type</th>
+                <th scope="col">charity name</th>
+                <th scope="col">donar name</th>
+                <th scope="col">quantity</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (bags.length > 0) {
+            let i = itemCounterStartInCurrentPage;
+            for (let bag of bags) { %>
+              <tr>
+                <td data-label="bloodType" class="blood-type"><%= bag.bloodType %></td>
+                <td data-label="charityName"> <%= bag.charityName %></td>
+                <td data-label="donarName"><%= bag.donorName %></td>
+                <td data-label="bloodQuantity"> <%= bag.bloodQuantity %></td>
+
+
+
+                <% if (isAuthenticated && bag.userId._id.toString() === currentUser._id.toString()) { %>
+                <td data-label="edit" class="right">
+                  <span><a href="/edit-bag/<%= bag._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
+                  <span>
+                    <form action="/delete-bag" method="POST" style="display: inline-block;">
+                      <input type="hidden" value="<%= bag._id %>" name="bagId">
+                      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                      <button class="myButtonThatLooksLikeLink" type="submit"><i class="fas fa-trash-alt"></i></button>
+                    </form>
+                  </span>
+                </td>
+                <% } %>
+              </tr>
+              <% i--; } %>
+              <% } else { %>
+              <div class="not-found">
+              <p><i class="fas fa-exclamation-triangle"></i> No Bags found.</p>
+              </div>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <%- include('../includes/bottom.ejs') %>

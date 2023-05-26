@@ -1,0 +1,34 @@
+<%- include('../includes/navigation.ejs') %>
+<section class="main">
+  <div class="main-content tabcontent" id="city">
+    <div class="new-items">
+      <div class="new-items_conatiner">
+        <h2>new City</h2>
+        <p class="red">City info</p>
+
+        <form action="/add-city" method="POST" class="new-items_form">
+          <label for="cityName" class="new-items_label">City Name</label>
+          <input class="new-items_input" type="text" name="cityName" id="cityName" />
+    
+          <label for="hospital" class="new-items_label">Hospital</label>
+          <input  class="new-items_input" type="text" name="hospital" id="hospital" />
+    
+          <label for="phoneNumber" class="new-items_label">Phone Number</label>
+          <input class="new-items_input" type="text" name="phoneNumber" id="phoneNumber" />
+    
+          <label for="address" class="new-items_label">Address</label>
+          <input class="new-items_input" type="text" name="address" id="address" />
+    
+          
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+          <button class="add-new add-new_float addnewrs" type="submit">Submit</button>
+        </form>
+       
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../includes/bottom.ejs') %>
+
+

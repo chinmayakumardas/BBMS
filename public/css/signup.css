@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --backgroundColor: #f2f5fa;
+  --main-color: #0f1048;
+  --second-color: #4b48b1;
+  --text-color: #7375a8;
+  --alertColor: #eb4d4b;
+}
+body {
+  /* background-image: url(/images/login/logwave.png); */
+  background-repeat: no-repeat;
+}
+/* start form*/
+.form {
+  background: #fff;
+  width: 45vw;
+  min-width: 30vw;
+  height: auto;
+  margin: auto;
+  margin-top: 1em;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 0.5em 2em;
+  border-radius: 7px;
+}
+.form__title {
+  width: 100%;
+  text-align: center;
+}
+.form__p {
+  color: #999;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+}
+.form__h2 {
+  font-size: 2em;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+
+.form__container {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 1em;
+  display: inline-flex;
+  justify-content: center;
+}
+.form__input {
+  padding: 0.7rem;
+  border-radius: 0;
+  border: none;
+  width: 49%;
+  margin-bottom: 1em;
+  margin: auto;
+  font-size: 1.2em;
+  border: 0.5px solid #999;
+  transition: 0.4s all;
+}
+.form__input:focus {
+  outline: none;
+  border: 1px solid var(--second-color);
+}
+.form__container_w .form__input {
+  width: 100%;
+}
+.form__container:nth-child(4) .form__input {
+  width: 50%;
+  margin-right: 0.5em;
+}
+.form__container:nth-child(4) .form__input:last-child {
+  text-transform: uppercase;
+}
+.form__container:nth-child(5) .form__input:nth-child(1) {
+  width: 25%;
+  margin-right: 0.5em;
+}
+.form__container:nth-child(5) .form__input:nth-child(2) {
+  width: 75%;
+}
+.form__button {
+  padding: 0.5em 0;
+  background-color: var(--second-color);
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  color: #fff;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bolder;
+  outline: none;
+  cursor: pointer;
+}
+.form__p_color {
+  color: #000;
+  margin-top: 1em;
+  line-height: 22px;
+}
+.user-message--error {
+  color: red;
+  text-align: center;
+  width: clamp(150px, 70%, 80%);
+  margin: auto;
+  padding: 0.5em;
+  background-color: rgb(0 0 0 / 1%);
+  border-radius: 8px;
+}
+
+/*.form__input_select option[value="+20"]{
+  background-image:url('./images/Egypt.png');
+
+ }*/
+/* start media */
+@media (max-width: 767px) {
+  .form {
+    width: 90vw;
+    padding: 1em;
+  }
+  .form__container:nth-child(4) .form__input {
+    width: 50% !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .form {
+    width: 75vw;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1350px) {
+  .form {
+    width: 65vw;
+  }
+}

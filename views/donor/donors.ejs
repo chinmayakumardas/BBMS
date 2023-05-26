@@ -1,0 +1,71 @@
+<%- include('../includes/navigation.ejs') %>
+  <section class="main">
+  <div class="main-content tabcontent" id="bloodDonar">
+
+
+<div class="pd-1">
+   <div class="container">
+      <a href="/add-donor" class="add-new addMain">add Donar</a>
+     <table>
+    <thead>
+      <tr>
+        <th scope="col">donar name</th>
+        <th scope="col" >national id</th>
+        <th scope="col">phone</th>
+        <th scope="col">last donate day</th>
+        <th scope="col">Next donation day</th>
+        <th scope="col">address</th>
+        <th scope="col" >email</th>
+        <th scope="col" class="center">blood type</th>
+        <th scope="col" ></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (donors.length > 0) {
+        let i = itemCounterStartInCurrentPage;
+        for (let donor of donors) { %>
+      <tr>
+        <td data-label="name"> <%= donor.donorName %></td>
+        <td data-label="national id"> <%= donor.nationalId %></td>
+        <td data-label="phone"> <%= donor.phoneNumber %></td>
+        <td data-label="last month" class="center"> <%= donor.donationDay %></td>
+        <td data-label="last year" class="center"><%= donor.nextDonationDay %></td>
+        <td data-label="address"><%= donor.address %> </td>
+        <td data-label="email" class="email"><%= donor.email %></td>
+        <td data-label="blood type" class="center blood-type"><%= donor.bloodType %></td>
+
+      <% if (isAuthenticated && donor.userId._id.toString() === currentUser._id.toString()) { %>
+
+        <td data-label="edit" class="right">
+          <span><a href="/edit-donor/<%= donor._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
+          <span>
+            <form action="delete-donor" method="POST" style="display: inline-block;">
+              <input type="hidden" value="<%= donor._id %>" name="donorId">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <button style="    border: none;" type="submit"><i class="fas fa-trash-alt"></i></button>
+            </form>
+          </span>
+        </td>
+          <% } %>
+
+
+
+        </tr>
+        <% i--; } %>
+
+        <% } else { %>
+          <div class="not-found">
+        <p><i class="fas fa-exclamation-triangle"></i> No donors found.</p>
+        </div>
+        <% } %>
+      </tbody>
+ </table>
+   </div>
+</div>
+</div>
+</section>
+
+  <%- include('../includes/pagination.ejs', paginationObject) %>
+
+
+  <%- include('../includes/bottom.ejs') %>

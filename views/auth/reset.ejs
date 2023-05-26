@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Blood Donar</title>
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+
+<body>
+	<main>
+	
+		<img class="wave" src="/images/login/logwave.png">
+		<div class="container">
+			<div class="img">
+				<img src="/images/login/logbg.svg">
+			</div>
+			<div class="login-content">
+				<form class="login" action="/reset" method="POST">
+					<img src="/images/login/logavatar.png">
+					<h2 class="title">Welcome</h2>
+					<div class="input-div one">
+						<div class="i">
+							<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+							<h5>E-Mail</h5>
+                            <input type="email" class="input" name="email" id="email">
+						</div>
+					</div>
+					<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+					<button class="btn" type="submit">Reset Password</button>
+					<p>Or</p>
+					<a href="/sign-up" class="btn">SignUp</a>
+					<% if (errorMessage) { %>
+                        <div class="myFlashMessage myFlashMessageError user-message">
+                            <%= errorMessage %>
+                        </div>
+                        <% } %>
+				</form>
+			</div>
+		</div>
+	</main>
+	<script type="text/javascript" src="/js/login.js"></script>
+</body>
+
+</html>

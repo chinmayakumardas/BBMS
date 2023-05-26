@@ -1,0 +1,69 @@
+<%- include('../includes/navigation.ejs') %>
+
+<section class="main">
+  <div class="main-content tabcontent" id="account">
+    <div class="pd-1">
+      <div class="container">
+        <h2 class="title-h2">Account Setting</h2>
+        <hr />
+        <form class="account-setting" action="/user/<%= user.id %>?_method=PUT" method="POST">
+          <div class="account-setting__form ">
+            <h3>Edit Account</h3>
+            <div class="form-container block">
+              <div>
+                <p class="account-info"><span class="label">First Name: </span><span class="label-info"><%= user.firstName %></span></p>
+              </div>
+               <div>
+                <p  class="account-info"><span class="label">Last Name: </span><span class="label-info"> <%= user.lastName %></span></p>
+              </div>
+              <div>
+                <p  class="account-info"><span class="label">E-mail: </span><span class="label-info"><%= user.email %></span></p>
+              </div>
+              <div>
+                <label for="phonenumber"  class="account-setting__label label">Phone Number: </label>
+                <input type="number" class="account-setting__input" placeholder="Phone Number" name="phoneNumber"
+                 value="<%= user.phoneNumber %>" />
+              </div>
+              <div>
+                <p  class="account-info"><span class="label">City: </span><span class="label-info"><%= user.city %></span></p>
+              </div>
+              <div>
+                <p  class="account-info"><span class="label">State: </span><span class="label-info"><%= user.state %></span></p>
+              </div>
+              <div class="hidden">
+                <label for="bloodType" class="account-setting__label label">Blood Type: </label>
+                <select class="new-items_select account-setting__selector" name="bloodType" id="bloodType">
+                  <option value="a+">a+</option>
+                  <option value="a-">a-</option>
+                  <option value="o+">o+</option>
+                  <option value="o-">o-</option>
+                  <option value="b+">b+</option>
+                  <option value="b-">b-</option>
+                  <option value="ab+">ab+</option>
+                  <option value="ab-">ab-</option>
+                  <option value="<%= user.bloodType %>"></option>
+              </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="account-setting__form">
+            <div class="account-setting__form">
+              <h2 class="account-setting__h2">You can Change your password below:- </h2>
+              <h3 class="account-setting__h3"><a href="/user/password/<%= user.id %>/edit">Change Password</a></h3>
+            </div>
+          </div>
+
+          <div class="save">
+            <button type="submit" class="save__btn">Update</button>
+            <a  class="save__btn" style="background-color: crimson;" href="/user/<%= user.id %>">Cancel</a>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../includes/bottom.ejs') %>
+

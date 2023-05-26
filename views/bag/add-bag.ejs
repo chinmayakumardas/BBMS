@@ -1,0 +1,48 @@
+
+<%- include('../includes/navigation.ejs') %>
+<section class="main">
+<div class="main-content tabcontent" id="patient">
+  
+    <div class="new-items ">
+      <div class="new-items_conatiner">
+        <h2>new blood bags</h2>
+        <p class="red">bags info</p>
+        <form action="/add-bag" method="POST" class="new-items_form">
+      
+          <label class="new-items_label" for="bloodType">Blood Type</label>
+          <select class="new-items_select type" name="bloodType" id="bloodType">
+            <option value="a+">a+</option>
+            <option value="a-">a-</option>
+            <option value="o+">o+</option>
+            <option value="o-">o-</option>
+            <option value="b+">b+</option>
+            <option value="b-">b-</option>
+            <option value="ab+">ab+</option>
+            <option value="ab-">ab-</option>
+          </select>
+          <label class="new-items_label" for="charityName">Charity Name</label>
+          <input class="new-items_input" type="text" name="charityName" id="charityName">
+    
+          <label class="new-items_label" for="donorName">Donor Name</label>
+          <input class="new-items_input" type="text" name="donorName" id="donorName">
+    
+          <label class="new-items_label" for="bloodQuantity">Quantity</label>
+          <input class="new-items_input" type="text" name="bloodQuantity" id="bloodQuantity" />
+    
+          
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+          <button class="add-new add-new_float addnewrs" type="submit">Submit</button>
+        </form>
+      
+      </div>
+    </div>
+    
+    
+      
+    </div>
+    
+
+ 
+</section>
+
+  <%- include('../includes/bottom.ejs') %>

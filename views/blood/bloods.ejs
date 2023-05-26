@@ -1,0 +1,54 @@
+<%- include('../includes/navigation.ejs') %>
+<section class="main">
+  <div class="main-content tabcontent" id="availabel">
+    <!-- start new item -->
+
+    <!-- end new item -->
+    <div class="pd-1">
+      <div class="container">
+        <a href="/add-blood" class="add-new addMain">new</a>
+        <table class="availabel">
+          <thead>
+            <tr>
+              <th scope="col">blood</th>
+              <th scope="col">quantity</th>
+              <th scope="col"></th>
+ 
+            </tr>
+          </thead>
+          <tbody>
+            <% if (bloods.length > 0) {
+              let i = itemCounterStartInCurrentPage;
+              for (let blood of bloods) { %>
+           <tr>
+              <td data-label="bloodType"><%= blood.bloodType %></td>
+              <td data-label="bloodQuantity">  <%= blood.bloodQuantity %></td>
+             
+              <% if (isAuthenticated && blood.userId._id.toString() === currentUser._id.toString()) { %> 
+              <td data-label="edit" class="right">
+                <span><a href="/edit-blood/<%= blood._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
+                <span>
+                  <form action="/delete-blood" method="POST" style="display: inline-block;">
+                    <input type="hidden" value="<%= blood._id %>" name="bloodId">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                    <button class="myButtonThatLooksLikeLink" type="submit"><i class="fas fa-trash-alt"></i></button>
+                  </form>
+                </span>
+              </td>
+              <% } %> 
+            </tr> 
+            <% i--; } %>
+          <% } else { %>
+            <div class="not-found">
+            <p><i class="fas fa-exclamation-triangle"></i> No Bloods found.</p>
+            </div>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<%- include('../includes/bottom.ejs') %>

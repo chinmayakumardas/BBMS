@@ -1,0 +1,129 @@
+<%- include('../includes/navComponent.ejs') %>
+
+    <main>
+
+
+        <% if (errorMessage) { %>
+
+            <div class="user-message user-message--error"> <i class="fas fa-exclamation-circle "></i> <%= errorMessage %></div>
+        <% } %>
+    <!-- start form  -->
+    <form class="form" action="/sign-up" method="POST">
+        <div class="form__title">
+            <!-- <p class="form__p">SIGNUP FORM</p> -->
+            <h2 class="form__h2">Join to Unlock more Features</h2>
+        </div>
+        <div class="form__container">
+            <input
+            type="text"
+            class="<%= validationErrors.find(e => e.param === 'firstName') ? 'invalid' : '' %>  form__input"
+            name="firstName" id="firstName"
+            placeholder="First name"
+            value="<%= oldInput.firstName %>">
+            <input
+            type="text"
+            name="lastName"
+            class="<%= validationErrors.find(e => e.param === 'lastName') ? 'invalid' : '' %>  form__input"
+            id="lastName"
+            placeholder="Last name"
+            value="<%= oldInput.lastName %>">
+        </div>
+        <div class="form__container form__container_w">
+            <input
+            type="email"
+            class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>  form__input"
+            name="email"
+            id="email"
+            placeholder="E-mail"
+            value="<%= oldInput.email %>">
+        </div>
+        <div class="form__container">
+            <input
+            type="text"
+            class="<%= validationErrors.find(e => e.param === 'state') ? 'invalid' : '' %>  form__input"
+            id="state"
+            name="state"
+            placeholder="State"
+            value="<%= oldInput.state %>">
+            <input
+            type="text"
+            class="<%= validationErrors.find(e => e.param === 'city') ? 'invalid' : '' %>  form__input"
+            name="city"
+            id="city"
+            placeholder="City"
+            value="<%= oldInput.city %>">
+            <select  class="form__input form__input_select <%= validationErrors.find(e => e.param === 'bloodType') ? 'invalid' : '' %>" name="bloodType" id="bloodType" value="<%= oldInput.bloodType %>">
+                <!-- <option value="<%=oldInput.bloodType%>"><%=oldInput.bloodType%></option> -->
+                <option disabled selected value="">bloodtype</option>
+                <option value="b+">B+</option>
+                <option value="b-">B-</option>
+                <option value="a+">a+</option>
+                <option value="a-">a-</option>
+                <option value="ab-">ab-</option>
+                <option value="ab+">ab+</option>
+                <option value="o-">o-</option>
+                <option value="o+">o+</option>
+              </select>
+        </div>
+
+        <div class="form__container">
+            <select class="form__input form__input_select <%= validationErrors.find(e => e.param === 'code') ? 'invalid' : '' %>" name="code" id="code" value="<%= oldInput.code %>">
+                <option value="20">+20</option>
+                <option value="966">+966</option>
+                <option value="<%= oldInput.code%>"><%= oldInput.code%></option>
+              </select>
+            <input
+            type="number"
+            class="<%= validationErrors.find(e => e.param === 'phoneNumber') ? 'invalid' : '' %>  form__input"
+            name="phoneNumber"
+            id="phoneNumber"
+            placeholder="Phone number"
+            value="<%= oldInput.phoneNumber%>">
+        </div>
+        <div class="form__container form__container_w">
+            <input
+            type="password"
+            class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>  form__input"
+            id="password"
+            name="password"
+            placeholder="Password"
+            value="<%= oldInput.password%>">
+        </div>
+        <div class="form__container form__container_w">
+            <input
+            type="password"
+            class="<%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %>  form__input"
+            name="confirmPassword"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            value="<%= oldInput.confirmPassword %>">
+        </div>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <button class="form__button"> Signup</button>
+        <p class="form__p form__p_color">
+            By join, you agree with the<a href="#"> Terms of Service </a> and the <a href="#">Privacy Policies </a> of
+            the site.<br>
+            <!-- Want to register as a Bloodbank account? <a href="#"> Click here</a> -->
+        </p>
+    </form>
+
+  <script src="/js/index.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script>
+      // gsap.from(".main-header__img", { opacity: 0, duration: 2, x: 200 });
+      gsap.from(".main-header__desc", {
+        opacity: 0,
+        duration: 2,
+        y: -100,
+        ease: "bounce",
+      });
+      gsap.from(".main-header__img", {
+        duration: 3,
+        x: 300,
+        opacity: 0,
+        scale: 0.5,
+      });
+    </script>
+</body>
+
+</html>

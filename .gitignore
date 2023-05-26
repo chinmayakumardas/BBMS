@@ -1,7 +1,4 @@
 node_modules
-
-# Local Netlify folder
-.netlify
-
-#local vscode
-.vscode
+package-lock.json
+private
+bkp

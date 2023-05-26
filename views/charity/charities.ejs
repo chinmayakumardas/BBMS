@@ -1,0 +1,59 @@
+<%- include('../includes/navigation.ejs') %>
+  <section class="main">
+
+    <div class="main-content tabcontent charity" id="charity">
+      
+ <div class="pd-1">
+      <div class="container">
+         <a href="/add-charity" class="add-new">Add Charity</a>
+        <table>
+       <thead>
+         <tr>
+           <th scope="col">charity name</th>
+           <th scope="col">phone</th>
+           <th scope="col" style="width:20%">address</th>
+           <th scope="col" style="width:40%;">description</th>				 
+           <th scope="col"></th>
+         </tr>
+       </thead>
+       <tbody>
+        <% if (charities.length > 0) {
+          let i = itemCounterStartInCurrentPage;
+          for (let charity of charities) { %>
+         <tr>
+           <td data-label="name"><%= charity.charityName %></td>
+           <td data-label="phone"><%= charity.phoneNumber %></td>				   
+           <td data-label="address"><%= charity.address %></td>
+           <td data-label="description:">  <%= charity.description %></td>
+
+           <% if (isAuthenticated && charity.userId._id.toString() === currentUser._id.toString()) { %>
+            <td data-label="edit" class="right">
+              <span><a href="/edit-charity/<%= charity._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
+              <span>
+                <form action="delete-charity" method="POST" style="display: inline-block;">
+                  <input type="hidden" value="<%= charity._id %>" name="charityId">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                  <button style="    border: none;" type="submit"><i class="fas fa-trash-alt"></i></button>
+                </form>
+              </span>
+            </td>
+            <% } %> 
+
+
+        </tr> 
+        <% i--; } %>
+      <% } else { %>
+        <div class="not-found">
+        <p><i class="fas fa-exclamation-triangle"></i> No Charities found.</p>
+        </div>
+        <% } %>
+      </tbody>
+    </table>
+      </div> 		
+ </div>
+</div>
+  </section>
+
+ 
+
+  <%- include('../includes/bottom.ejs') %>

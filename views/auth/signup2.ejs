@@ -1,0 +1,127 @@
+<%- include('../includes/top.ejs') %>
+
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main class="myContainer">
+        <% if (errorMessage) { %>
+        <div class="myFlashMessage myFlashMessageError">
+            <%= errorMessage %>
+        </div>
+        <% } %>
+        <div class="myCentered">
+            <form action="/sign-up" method="POST">
+                <div class="myForm">
+                    
+                    <div class="myFormItem">
+                        <label for="firstname">First Name</label>
+                        <input 
+                        class="<%= validationErrors.find(e => e.param === 'firstName') ? 'invalid' : '' %>"
+                        type="text" placeholder="First Name" name="firstName" id="firstName" value="<%= oldInput.firstName %>"
+                        />
+                    </div>
+
+                    <div class="myFormItem">
+                        <label for="lastname">Last Name</label>
+                        <input 
+                            type="text" 
+                            name="lastName" 
+                            class="<%= validationErrors.find(e => e.param === 'last') ? 'invalid' : '' %>" 
+                            id="lastName" 
+                            placeholder="Last name"
+                            value="<%= oldInput.lastName %>">
+                    </div>
+
+                    <div class="myFormItem">
+                        <label for="email">E-Mail</label>
+                        <input 
+                        class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
+                        type="email" placeholder="E-mail" name="email" id="email" value="<%= oldInput.email %>"
+                        />
+                    </div>
+
+                    <div class="myFormItem">
+                        <label for="state">State</label>
+                        <input 
+                        type="text"
+                        class="form__input <%= validationErrors.find(e => e.param === 'state') ? 'invalid' : '' %>" 
+                        id="state"
+                        name="state" 
+                        placeholder="State"
+                        value="<%= oldInput.state %>">
+                    </div>
+                    <div class="myFormItem">
+                        <label for="city">City</label>
+                        <input 
+                        type="text" 
+                        name="city" 
+                        id="city" 
+                        class="form__input <%= validationErrors.find(e => e.param === 'city') ? 'invalid' : '' %>" 
+                        placeholder="City"
+                        value="<%= oldInput.city %>">
+                    </div>
+
+                    <div class="myFormItem">
+                        <label for="bloodtype">Blood Type</label>
+                        <select class="<%= validationErrors.find(e => e.param === 'bloodType') ? 'invalid' : '' %>" name="bloodType" id="bloodType" value="<%= oldInput.bloodType %>">
+                            <option value="<%=oldInput.bloodType%>"><%=oldInput.bloodType%></option>
+                            <option value="b+">B+</option>
+                            <option value="b-">B-</option>
+                            <option value="a+">a+</option>
+                            <option value="a-">a-</option>
+                            <option value="ab-">ab-</option>
+                            <option value="ab+">ab+</option>
+                            <option value="o-">o-</option>
+                            <option value="o+">o+</option>
+                          </select>
+                    </div>
+
+                    <div class="myFormItem">
+                        <select class="form__input form__input_select <%= validationErrors.find(e => e.param === 'code') ? 'invalid' : '' %>" name="code" id="code" value="<%= oldInput.code %>"> 
+                            <option value="+20">+20</option>
+                            <option value="+966">+966</option>
+                     
+                          </select>
+                    </div>
+
+                    <div class="myFormItem">
+                        <label for="phonenumber">Phone Number</label>
+                        <input
+                        type="number" 
+                        name="phoneNumber"
+                        id="phoneNumber"
+                        class="form__input <%= validationErrors.find(e => e.param === 'phoneNumber') ? 'invalid' : '' %>" 
+                        placeholder="Phone number"
+                        value="<%= oldInput.phoneNumber %>">
+                    </div>
+
+
+                    <div class="myFormItem">
+                        <label for="password">Password</label>
+                        <input 
+                        class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>"
+                        type="password" placeholder="Password" name="password" id="password" value="<%= oldInput.password %>"
+                        />
+                    </div>
+                    <div class="myFormItem">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input 
+                        class="<%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %>"
+                        type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPassword" value="<%= oldInput.confirmPassword %>"
+                        />
+                    </div>
+                </div>
+                <div class="myCentered">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                    <button class="myButton" type="submit">Sign Up</button>
+                    <p class="form__p form__p_color">
+                        By join, you agree with the<a href="#"> Terms of Service </a> and the <a href="#">Privacy Policies </a> of the site.<br>
+                        Want to register as a Bloodbank account? <a href="#"> Click here</a>
+                     </p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <%- include('../includes/bottom.ejs') %>
